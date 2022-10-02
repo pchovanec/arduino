@@ -96,8 +96,6 @@ void initBrightness(){
 //  APP = &brightness;
 }
 
-
-
 void initExternInputs(){
   APP = &externBoard;
 }
@@ -106,10 +104,3 @@ void initExternOutputs(){
   APP = &externBoard;
 }
 
-void balancerInit(){
-
-}
-
-void nextPosition(){
-
-}

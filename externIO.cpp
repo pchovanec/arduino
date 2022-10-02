@@ -18,16 +18,10 @@ void externIO::render(void){
     } while ( OLED.nextPage() );
 
    if((millis() - timer) > 1000){   
-  byte cacheSPCR = SPCR;
-  byte cacheSPSR = SPSR;
-  byte cacheSPDR = SPDR;
-  SPCR = (1<<SPE)|(1<<MSTR)|(1<<SPR0);
-  inputCache = onechip.byteRead(GPIOB);
-  onechip.byteWrite(GPIOA,outputCache);
-  SPCR = cacheSPCR;
-  SPSR = cacheSPSR;
-  SPDR = cacheSPDR;
-  }
+     SPCR = (1<<SPE)|(1<<MSTR)|(1<<SPR0);
+     inputCache = onechip.byteRead(GPIOB);
+     onechip.byteWrite(GPIOA,outputCache);
+   }
 }
 
 void externIO::inputApp(void){
